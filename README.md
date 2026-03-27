@@ -13,7 +13,41 @@ As of March 2020, Data Services workshops are being held virtually on Zoom. [See
 
 
 ## Pre-Class Instructions
-Before the class, follow the [installation instructions to download all required software and tools for this workshop](link-to-github-installation-repo).
+
+To follow along during the workshop, please complete the following setup steps in advance of tomorrows workshop:
+
+### Step 1: Software Setup
+
+Make sure you have downloaded and installed the following:
+
+- **R** – https://cran.r-project.org/
+- **RStudio** – https://posit.co/download/rstudio-desktop/ (select the Download button next to "2: Install RStudio")
+
+If it's been a while since you've used R or RStudio, no worries! Just check your version numbers and consider updating if you're several versions behind.
+
+### Step 2: Install Packages
+
+We'll be using three R packages in this workshop. Please install them before the workshop starts, as some can take a few minutes to download.
+
+- **ggplot2** – create data visualizations in R 📊
+- **palmerpenguins** – contains the dataset we'll be visualizing 🐧
+- **RColorBrewer** – provides color-blind-friendly color palettes 🎨
+- **shiny** – build interactive dashboards in R 💎
+- **bslib** – configure the look and feel of our dashboards 🖼️
+
+Not sure if you've already installed these? Run `library(package_name)` to check. If you get an error, install them by opening RStudio and running:
+
+```r
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+install.packages("RColorBrewer")
+install.packages("shiny")
+install.packages("bslib")
+```
+
+### Other Computer Setup
+
+You'll need to switch between presentation slides and RStudio during the workshop. We recommend either connecting a second monitor or placing two windows side by side on your screen.
 
 
 ## Description of Files
