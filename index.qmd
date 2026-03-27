@@ -9,13 +9,13 @@ Workshop materials and instructions for the *Interactive Data Visualization in R
 
 ## Post-Class Survey
 
-If you have taken the live webinar for this class, please take this survey: [Intro to Data Vis in R Survey](http://bit.ly/data-vis-r-survey)
+If you have taken the live webinar for this class, please take this survey: [Interactive Data Visualization in R with Shiny](https://bit.ly/shiny-r-vis-survey)
 
 ## Workshop Materials
 
 ### Presentation Slides
 
-- [Presentation Slides (PDF)](PresentationMaterials/IntroDataVisR.pdf)
+- [Presentation Slides (PDF)](PresentationMaterials/InteractiveVisualizationInRShiny.pdf)
 
 ### Completed Code
 
@@ -24,8 +24,7 @@ If you have taken the live webinar for this class, please take this survey: [Int
 
 ### Cheatsheets
 
-- [Base Graphics Cheatsheet](Resources/BaseGraphicsCheatsheet.pdf)
-- [ggplot2 Cheatsheet](Resources/ggplot2Cheatsheet.pdf)
+- [Base Graphics Cheatsheet](Resources/shiny-cheatsheet.pdf)
 
 ## Additional Data Visualization in R Resources
 
@@ -49,4 +48,4 @@ The images, external resources, and cheatsheets linked in this repository may ha
 ## Citation
 
 Please cite this material as:
-Johns Hopkins University Data Services. March 4, 2026. [Introduction to Data Visualization in R](https://github.com/jhu-data-services/intro-to-data-visualization-in-r)
+Johns Hopkins University Data Services. March 20, 2026. [Interactive Data Visualization in R with Shiny](https://github.com/jhu-data-services/interactive-data-visualization-in-r-with-shiny)
