@@ -1,6 +1,5 @@
-# Workshop Name
-[description]
-
+# Interactive Data Visualization in R with Shiny
+Are you interested in exploring and understanding your data? Would you like to communicate your R analysis in an easy to use, interactive way? Shiny is an R package that makes it simple to build and share web applications for the purpose of visualizing and communicating your data interactively. Join JHU Data Services for a workshop introducing the Shiny package in R for developing and sharing interactive data visualizations. In this two-part hands-on session, we’ll cover design concepts of interactive data visualizations and build a Shiny web app from scratch using a prepared dataset. Some prior experience in R is required.
 
 ## JHU Data Services   
 Website: [dataservices.library.jhu.edu/](https://dataservices.library.jhu.edu/)   
@@ -9,7 +8,7 @@ JHU Data Services, part of the Johns Hopkins University Sheridan Libraries, help
 
 This repository contains materials for one of our live webinars open to JHU students, faculty, and staff. Please [contact us](mailto:dataservices@jhu.edu) with any questions.
 
-As of March 2020, Data Services workshops are being held virtually on Zoom. [See our calendar to register for upcoming workshops.](https://dataservices.library.jhu.edu/training-workshops/calendar/)
+[See our calendar to register for upcoming workshops.](https://dataservices.library.jhu.edu/training-workshops/calendar/)
 
 
 ## Pre-Class Instructions
@@ -51,17 +50,13 @@ You'll need to switch between presentation slides and RStudio during the worksho
 
 
 ## Description of Files
-- Data: This folder contains raw data files to be used during hands-on activities in the workshop
-- In-ClassScripts: This folder contains code files you will need for the workshop:
-    - [file1]
-    - [file2]
-    - [file3]
 - PresentationMaterials: This folder contains PowerPoint slides and other presentation materials used in the workshop
 - Resources: This folder contains cheatsheets to assist you during the workshop and links to external sources for you to continue your learning
 
 
 ## Post-Class Survey
-If you have taken the live webinar for this class, please take this survey: [link name](url)
+If you have taken the live webinar for this class, please take this survey: [Interactive Data Visualization in R with Shiny Survey](https://bit.ly/sh
+iny-r-vis-survey)
 
 
 ## License and Terms of Use
