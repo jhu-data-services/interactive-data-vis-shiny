@@ -55,8 +55,7 @@ You'll need to switch between presentation slides and RStudio during the worksho
 
 
 ## Post-Class Survey
-If you have taken the live webinar for this class, please take this survey: [Interactive Data Visualization in R with Shiny Survey](https://bit.ly/sh
-iny-r-vis-survey)
+If you have taken the live webinar for this class, please take this survey: [Interactive Data Visualization in R with Shiny Survey](https://bit.ly/shiny-r-vis-survey)
 
 
 ## License and Terms of Use
