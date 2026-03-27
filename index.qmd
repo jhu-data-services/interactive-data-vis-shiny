@@ -7,6 +7,17 @@ format:
 
 Workshop materials and instructions for the *Interactive Data Visualization in R with Shiny* virtual workshop, led by JHU Data Services.
 
+## Learning Objectives
+
+> 1. Articulate basic principles of interactive data visualization 
+>
+> 2. Understand critical concepts from R-Shiny including the structure of a Shiny App, how to run a Shiny App, how to configure the aesthetics of a Shiny App, and how the reactive programming model of Shiny works. 
+>
+> 3. Be able to augment a barebones Shiny app framework to develop a fully functioning Shiny app using provided data. This will encompass R and HTML programming. 
+>
+> 4. Be able to identify tools and resources for sharing and deploying a Shiny app. Be aware of advanced style configuration using CSS. 
+   
+
 ## Post-Class Survey
 
 If you have taken the live webinar for this class, please take this survey: [Interactive Data Visualization in R with Shiny](https://bit.ly/shiny-r-vis-survey)
