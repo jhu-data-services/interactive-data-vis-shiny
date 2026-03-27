@@ -30,8 +30,8 @@ If you have taken the live webinar for this class, please take this survey: [Int
 
 ### Completed Code
 
-- [Base R](In-ClassScripts/lesson-1-base-r.qmd)
-- [ggplot2](In-ClassScripts/lesson-2-ggplot2.qmd)
+- [Day 1: Basic Shiny App](In-ClassScripts/part-1-basic-shiny-app.qmd)
+- [Day 2: Penguin Dashboard](In-ClassScripts/part-2-penguin-dashboard.qmd)
 
 ### Cheatsheets
 

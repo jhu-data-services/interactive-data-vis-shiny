@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Interactive Data Visualization in R with Shiny</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,15 +35,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./PresentationMaterials/IntroDataVisR.pdf"> 
+    <a class="nav-link" href="./PresentationMaterials/InteractiveVisualizationInRShiny.pdf"> 
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -103,27 +105,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-in-class-scripts">    
         <li>
-    <a class="dropdown-item" href="./In-ClassScripts/lesson-1-base-r.qmd" target="_blank">
- <span class="dropdown-text">Part 1 – Base R</span></a>
+    <a class="dropdown-item" href="./In-ClassScripts/part-1-basic-shiny-app.html" target="_blank">
+ <span class="dropdown-text">Day 1: Basic Shiny App</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./In-ClassScripts/lesson-2-ggplot2.qmd" target="_blank">
- <span class="dropdown-text">Part 2 – ggplot2</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-instructor" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Instructor</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-instructor">    
-        <li>
-    <a class="dropdown-item" href="./In-ClassScripts/instructor-notebook.html" target="_blank">
- <span class="dropdown-text">Instructor Notebook</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./Resources/ggplot2Cheatsheet.pdf" target="_blank">
- <span class="dropdown-text">ggplot2 Cheatsheet</span></a>
+    <a class="dropdown-item" href="./In-ClassScripts/part-2-penguin-dashboard.html" target="_blank">
+ <span class="dropdown-text">Day 2: Penguin Dashboard</span></a>
   </li>  
     </ul>
   </li>
@@ -143,7 +130,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#post-class-survey" id="toc-post-class-survey" class="nav-link active" data-scroll-target="#post-class-survey">Post-Class Survey</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#post-class-survey" id="toc-post-class-survey" class="nav-link" data-scroll-target="#post-class-survey">Post-Class Survey</a></li>
   <li><a href="#workshop-materials" id="toc-workshop-materials" class="nav-link" data-scroll-target="#workshop-materials">Workshop Materials</a>
   <ul class="collapse">
   <li><a href="#presentation-slides" id="toc-presentation-slides" class="nav-link" data-scroll-target="#presentation-slides">Presentation Slides</a></li>
@@ -180,30 +168,40 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Workshop materials and instructions for the <em>Interactive Data Visualization in R with Shiny</em> virtual workshop, led by JHU Data Services.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<blockquote class="blockquote">
+<ol type="1">
+<li><p>Articulate basic principles of interactive data visualization</p></li>
+<li><p>Understand critical concepts from R-Shiny including the structure of a Shiny App, how to run a Shiny App, how to configure the aesthetics of a Shiny App, and how the reactive programming model of Shiny works.</p></li>
+<li><p>Be able to augment a barebones Shiny app framework to develop a fully functioning Shiny app using provided data. This will encompass R and HTML programming.</p></li>
+<li><p>Be able to identify tools and resources for sharing and deploying a Shiny app. Be aware of advanced style configuration using CSS.</p></li>
+</ol>
+</blockquote>
+</section>
 <section id="post-class-survey" class="level2">
 <h2 class="anchored" data-anchor-id="post-class-survey">Post-Class Survey</h2>
-<p>If you have taken the live webinar for this class, please take this survey: <a href="http://bit.ly/data-vis-r-survey">Intro to Data Vis in R Survey</a></p>
+<p>If you have taken the live webinar for this class, please take this survey: <a href="https://bit.ly/shiny-r-vis-survey">Interactive Data Visualization in R with Shiny</a></p>
 </section>
 <section id="workshop-materials" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-materials">Workshop Materials</h2>
 <section id="presentation-slides" class="level3">
 <h3 class="anchored" data-anchor-id="presentation-slides">Presentation Slides</h3>
 <ul>
-<li><a href="PresentationMaterials/IntroDataVisR.pdf">Presentation Slides (PDF)</a></li>
+<li><a href="PresentationMaterials/InteractiveVisualizationInRShiny.pdf">Presentation Slides (PDF)</a></li>
 </ul>
 </section>
 <section id="completed-code" class="level3">
 <h3 class="anchored" data-anchor-id="completed-code">Completed Code</h3>
 <ul>
-<li><a href="In-ClassScripts/lesson-1-base-r.qmd">Base R</a></li>
-<li><a href="In-ClassScripts/lesson-2-ggplot2.qmd">ggplot2</a></li>
+<li><a href="./In-ClassScripts/part-1-basic-shiny-app.html">Day 1: Basic Shiny App</a></li>
+<li><a href="./In-ClassScripts/part-2-penguin-dashboard.html">Day 2: Penguin Dashboard</a></li>
 </ul>
 </section>
 <section id="cheatsheets" class="level3">
 <h3 class="anchored" data-anchor-id="cheatsheets">Cheatsheets</h3>
 <ul>
-<li><a href="Resources/BaseGraphicsCheatsheet.pdf">Base Graphics Cheatsheet</a></li>
-<li><a href="Resources/ggplot2Cheatsheet.pdf">ggplot2 Cheatsheet</a></li>
+<li><a href="Resources/shiny-cheatsheet.pdf">Base Graphics Cheatsheet</a></li>
 </ul>
 </section>
 </section>
@@ -226,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<p>Please cite this material as: Johns Hopkins University Data Services. March 4, 2026. <a href="https://github.com/jhu-data-services/intro-to-data-visualization-in-r">Introduction to Data Visualization in R</a></p>
+<p>Please cite this material as: Johns Hopkins University Data Services. March 20, 2026. <a href="https://github.com/jhu-data-services/interactive-data-visualization-in-r-with-shiny">Interactive Data Visualization in R with Shiny</a></p>
 
 
 </section>
