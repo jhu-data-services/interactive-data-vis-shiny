@@ -16,6 +16,12 @@ website:
             text: 'Day 1: Basic Shiny App'
           - href: In-ClassScripts/part-2-penguin-dashboard.qmd
             text: 'Day 2: Penguin Dashboard'
+      - href: PresentationMaterials/InteractiveVisualizationInRShiny.pdf
+        text: Slides
+        target: _blank
+      - href: Resources/shiny-cheatsheet.pdf 
+        text: Shiny Cheatsheet
+        target: _blank
 format:
   html:
     theme: cosmo
