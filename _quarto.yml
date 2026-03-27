@@ -9,14 +9,13 @@ website:
         text: Home
       - href: PresentationMaterials/InteractiveVisualizationInRShiny.pdf
         text: Slides
+        target: _blank
       - text: "In-Class Scripts"
         menu:
           - href: In-ClassScripts/part-1-basic-shiny-app.qmd
             text: 'Day 1: Basic Shiny App'
-            target: _blank
           - href: In-ClassScripts/part-2-penguin-dashboard.qmd
             text: 'Day 2: Penguin Dashboard'
-            target: _blank
 format:
   html:
     theme: cosmo
