@@ -68,4 +68,4 @@ The images, external resources, and cheatsheets linked in this repository may ha
 
 ## Citation
 Please cite this material as:    
-Johns Hopkins University Data Services. [Date of workshop]. [Workshop title]. [URL] 
+Johns Hopkins University Data Services. March 24th and 25th, 2026. Interactive Data Visualization in R with Shiny. https://github.com/jhu-data-services/interactive-data-vis-shiny
