@@ -1,6 +1,6 @@
 ---
 title: "Interactive Data Visualization in R with Shiny"
-subtitle: "Teaching Notebook - March 20th, 2026"
+subtitle: "Day 2: Penguin Dashboard - March 26th, 2026"
 author: "Peter Lawson"
 date: 2026-03-20
 format:
@@ -14,106 +14,17 @@ filters:
 
 # Overview
 
-Welcome to **Interactive Data Visualization in R with Shiny**. This is a step-by-step guide walking through the code we will write together during our hands-on session.  
-
-## Learning Objectives
-
-By the end of our two-part Shiny workshop, you should be able to: 
-
-> 1. Articulate basic principles of interactive data visualization 
->
-> 2. Understand critical concepts from R-Shiny including the structure of a Shiny App, how to run a Shiny App, how to configure the aesthetics of a Shiny App, and how the reactive programming model of Shiny works. 
->
-> 3. Be able to augment a barebones Shiny app framework to develop a fully functioning Shiny app using provided data. This will encompass R and HTML programming. 
->
-> 4. Be able to identify tools and resources for sharing and deploying a Shiny app. Be aware of advanced style configuration using CSS. 
-    
-  
-## Hello World
-
-Let's begin by building the simplest Shiny application we can. 
-
-- Create minimum skeleton for a Shiny app. Name file `app.R` to have it recognized as a shiny application. 
-- Add a title to the `page_sidebar` labeled `"Hello World!"`. 
-
-```{r}
-#| echo: true
-#| eval: false
-#| file: "src/part-1-introduction/01-hello-world.R"
-```
-
-# Part 1 - Developing a Simple Shiny Application
-
-In this step-by-step lesson, we will create a simple Shiny application. To see the application we will be building, you can run:
-
-```{r}
-#| echo: true
-#| eval: false
-library(shiny)
-runExample("01_hello")
-```
+We are going to apply the principles we learned on Day 1 to create a full-featured dashboard, and surface and address some concerns that arise as we do.
 
 ## Step 1: Skeleton
-```{r}
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/02-old-faithful-skeleton.R"
-```
 
-## Step 2: Add Title
-```{r}
-#| source-line-numbers: "6-8"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/03-old-faithful-add-title.R"
-```
+Just like our Day 1 example, we need to create a basic skeleton for our app, which includes:
 
-1. Add a title.
+- Package imports (`shiny` and `bslib` are both dependencies for Shiny apps)
+- `ui`: The user interface layout (what the user sees)
+- `server`: The server runs our code, and reacts to changes from the user
+- `shinyApp`: Combines the two parts of our app (`ui` and `server`) and runs a local webserver to display our app in a browser.
 
-## Step 3: Add Layout
-```{r}
-#| source-line-numbers: "9"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/04-old-faithful-add-layout.R"
-```
-
-
-## Step 4: Add Input
-```{r}
-#| source-line-numbers: "9-19"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/05-old-faithful-add-input.R"
-```
-
-## Step 5: Add Reactive Output
-```{r}
-#| source-line-numbers: "20-32"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/06-old-faithful-add-reactive-output.R"
-```
-
-## Step 6: Add Plot Output
-```{r}
-#| source-line-numbers: "15-17"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/07-old-faithful-add-plot-output.R"
-```
-
-## Step 7: Add Eruptions Histogram 
-```{r}
-#| source-line-numbers: "16-17,39-48"
-#| echo: true 
-#| eval: false
-#| file: "src/part-1-introduction/08-old-faithful-add-eruptions-histogram.R"
-```
-
-# Part 2 - Developing a Penguin Dashboard Application
-
-## Step 1: Skeleton
 ```{r}
 #| echo: true 
 #| eval: false
@@ -121,6 +32,16 @@ runExample("01_hello")
 ```
 
 ## Step 2: Data Import and Cleaning
+
+Here we load in our data that we will use in our dashboard. We will be using the `palmerpenguins` dataset.
+
+![](https://allisonhorst.github.io/palmerpenguins/logo.png)
+
+We do a little data cleaning here:
+
+- Remove missing values with `na.omit`
+- Rename the column names with formatted, human readable titles
+
 ```{r}
 #| source-line-numbers: "3-22"
 #| echo: true 
@@ -129,6 +50,18 @@ runExample("01_hello")
 ```
 
 ## Step 3: Data Description
+
+Now let's start developing our dashboard.
+
+Let's add a description of our data on the dashboard toinform the user what data is being displayed, and from where.
+
+We add a sidebar where we will put our informational description, as well as our user input interactive elements.
+
+Inside our sidebar we are adding a few things:
+
+- Text, which is indicated by `"This application uses data from ..."`
+- Code, which is formatted text, indicated by: `code('palmerpenguins')`
+- Image, which is added to our dashboard using the `img` function
 ```{r}
 #| source-line-numbers: "27-35"
 #| echo: true 
@@ -137,6 +70,9 @@ runExample("01_hello")
 ```
 
 ## Step 4: Data Visualization
+
+Now let's create a simple scatterplot visualization of our penguins:
+
 ```{r}
 #| source-line-numbers: "4,45-58"
 #| echo: true 
@@ -145,6 +81,12 @@ runExample("01_hello")
 ```
 
 ## Step 5: Interactive Visualization
+
+Right now our data visualization is static. If we want to make it interactive, we need to first create some inputs that the users can control, that are related to our data visualization.
+
+Since our visualization uses the arguments for the `x` (Bill Length (mm)) and `y` (Bill Depth (mm)) axes, we will create a selector that allows the user to choose alternative `x` and `y` variables.
+
+
 ```{r}
 #| source-line-numbers: "30-43,65-68"
 #| echo: true 
@@ -153,6 +95,9 @@ runExample("01_hello")
 ```
 
 ## Step 6: Species Selector
+
+We also want to add a way for the user to select specific penguins species to explore in the dashboard, which we do with a `checkboxGroupInput`.
+
 ```{r}
 #| source-line-numbers: "42-51,70-73,78"
 #| echo: true 
@@ -160,23 +105,37 @@ runExample("01_hello")
 #| file: "src/part-2-penguins/06-species-selector.R"
 ```
 
-## Step 7: Consistent Scale
+## Step 7: Consistent Coloring
+
+When we choose different species, we want to ensure they are represented with consistent colors across all visualizations. We explictly assign colors, specifically colorblind friendly colors, using RColorBrewer.
+
+```{r}
+#| source-line-numbers: "5,21-28,88-89"
+#| echo: true 
+#| eval: false
+#| file: "src/part-2-penguins/07-consistent-coloring.R"
+```
+
+The minimum and maximum range in the x-axis and y-axis is determined by our data. If we are only looking at one species, rather than all species, we may have a different minimum and maximum. This means it's difficult to draw valid comparisons between different subsets of our data.
+
+## Step 8: Consistent Scale
 ```{r}
 #| source-line-numbers: "84-90"
 #| echo: true 
 #| eval: false
-#| file: "src/part-2-penguins/07-consistent-scale.R"
-```
-
-## Step 8: Consistent Coloring
-```{r}
-#| source-line-numbers: "20-24,87-88"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/08-consistent-coloring.R"
+#| file: "src/part-2-penguins/08-consistent-scale.R"
 ```
 
 ## Step 9: Smoother and Facet
+
+We can use a checkbox to allow the user to decide whether a part of our ggplot2 code is active or not. To do this, we can wrap a ggplot2 section, like:
+
+`geom_smooth()`
+
+in a conditional statement that will only enable it if the conditional evaluates as `TRUE` (the user has selected it using a checkbox):
+
+`{if (input$show_smoother) { geom_smooth() }}`
+
 ```{r}
 #| source-line-numbers: "19,54-62,93-95"
 #| echo: true 
@@ -185,8 +144,11 @@ runExample("01_hello")
 ```
 
 ## Step 10: Add Summary
+
+Finally, we will output summary statistics for our user's data selection, along with a display of the filtered dataframe.
+
 ```{r}
-#| source-line-numbers: "5,19-21,28,42,59-60,70-71,74,100-101,119-126"
+#| source-line-numbers: "70-85,121-127"
 #| echo: true 
 #| eval: false
 #| file: "src/part-2-penguins/10-add-summary.R"

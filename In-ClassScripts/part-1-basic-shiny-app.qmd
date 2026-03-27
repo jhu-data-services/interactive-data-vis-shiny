@@ -1,6 +1,6 @@
 ---
 title: "Interactive Data Visualization in R with Shiny"
-subtitle: "Teaching Notebook - March 20th, 2026"
+subtitle: "Day 1: Basic Shiny App - March 25th, 2026"
 author: "Peter Lawson"
 date: 2026-03-20
 format:
@@ -16,24 +16,13 @@ filters:
 
 Welcome to **Interactive Data Visualization in R with Shiny**. This is a step-by-step guide walking through the code we will write together during our hands-on session.  
 
-## Learning Objectives
-
-By the end of our two-part Shiny workshop, you should be able to: 
-
-> 1. Articulate basic principles of interactive data visualization 
->
-> 2. Understand critical concepts from R-Shiny including the structure of a Shiny App, how to run a Shiny App, how to configure the aesthetics of a Shiny App, and how the reactive programming model of Shiny works. 
->
-> 3. Be able to augment a barebones Shiny app framework to develop a fully functioning Shiny app using provided data. This will encompass R and HTML programming. 
->
-> 4. Be able to identify tools and resources for sharing and deploying a Shiny app. Be aware of advanced style configuration using CSS. 
-    
   
 ## Hello World
 
 Let's begin by building the simplest Shiny application we can. 
 
 - Create minimum skeleton for a Shiny app. Name file `app.R` to have it recognized as a shiny application. 
+
 - Add a title to the `page_sidebar` labeled `"Hello World!"`. 
 
 ```{r}
@@ -41,8 +30,6 @@ Let's begin by building the simplest Shiny application we can.
 #| eval: false
 #| file: "src/part-1-introduction/01-hello-world.R"
 ```
-
-# Part 1 - Developing a Simple Shiny Application
 
 In this step-by-step lesson, we will create a simple Shiny application. To see the application we will be building, you can run:
 
@@ -68,7 +55,6 @@ runExample("01_hello")
 #| file: "src/part-1-introduction/03-old-faithful-add-title.R"
 ```
 
-1. Add a title.
 
 ## Step 3: Add Layout
 ```{r}
@@ -105,89 +91,8 @@ runExample("01_hello")
 
 ## Step 7: Add Eruptions Histogram 
 ```{r}
-#| source-line-numbers: "16-17,39-48"
+#| source-line-numbers: "17-18,39-48"
 #| echo: true 
 #| eval: false
 #| file: "src/part-1-introduction/08-old-faithful-add-eruptions-histogram.R"
-```
-
-# Part 2 - Developing a Penguin Dashboard Application
-
-## Step 1: Skeleton
-```{r}
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/01-skeleton.R"
-```
-
-## Step 2: Data Import and Cleaning
-```{r}
-#| source-line-numbers: "3-22"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/02-data-import-cleaning.R"
-```
-
-## Step 3: Data Description
-```{r}
-#| source-line-numbers: "27-35"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/03-data-description.R"
-```
-
-## Step 4: Data Visualization
-```{r}
-#| source-line-numbers: "4,45-58"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/04-data-visualization.R"
-```
-
-## Step 5: Interactive Visualization
-```{r}
-#| source-line-numbers: "30-43,65-68"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/05-interactive-visualization.R"
-```
-
-## Step 6: Species Selector
-```{r}
-#| source-line-numbers: "42-51,70-73,78"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/06-species-selector.R"
-```
-
-## Step 7: Consistent Scale
-```{r}
-#| source-line-numbers: "5,21-24,70-71,84-91"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/07-consistent-scale.R"
-```
-
-## Step 8: Consistent Coloring
-```{r}
-#| source-line-numbers: "20-24,87-88"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/08-consistent-coloring.R"
-```
-
-## Step 9: Smoother and Facet
-```{r}
-#| source-line-numbers: "19,54-62,93-95"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/09-smoother-facet.R"
-```
-
-## Step 10: Add Summary
-```{r}
-#| source-line-numbers: "5,19-21,28,42,59-60,70-71,74,100-101,119-126"
-#| echo: true 
-#| eval: false
-#| file: "src/part-2-penguins/10-add-summary.R"
 ```
